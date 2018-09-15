@@ -9,8 +9,6 @@ import VideoDetail from './components/video_detail';
 
 const API_KEY = '';
 
-// Create a new component and this component produces
-// some HTML
 class App extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +23,7 @@ class App extends Component {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
-       }); // this.setState({ videos: videos });
+       });
     });
   }
 
@@ -42,6 +40,4 @@ class App extends Component {
   }
 }
 
-// Take this component's generated HMTL and put it on
-// the page (in the DOM)
-ReactDOM.render(<App />, document.querySelector('.container')); // Used to interact with DOM
+ReactDOM.render(<App />, document.querySelector('.container'));
