@@ -6,7 +6,7 @@ import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 
-const API_KEY = 'AIzaSyDgo3-T4DtyB5eJrqgkKe72Lff-b2VXW94';
+const API_KEY = '';
 
 // Create a new component and this component produces
 // some HTML
@@ -17,15 +17,20 @@ class App extends Component {
     this.state = { videos: [] };
 
     YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
-      this.setState({ videos }); // this.setState({ videos: videos });
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+       }); // this.setState({ videos: videos });
     });
   }
 
   render() {
     return <div>
     <SearchBar />
-    <VideoDetail video={this.state.videos[0]} />
-    <VideoList videos={this.state.videos} />
+    <VideoDetail video={this.state.selectedVideo} />
+    <VideoList
+      onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+      videos={this.state.videos} />
     </div>;
   }
 }
