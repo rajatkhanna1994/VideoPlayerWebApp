@@ -1,8 +1,6 @@
 # VideoPlayerWebApp
 
-A simple todo list react application.
-
-A TODO-list application created in react.
+A simple youtube video player react application.
 
 ## Installation
 
